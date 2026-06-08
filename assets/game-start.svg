@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+  <title id="title">Game Start animated header</title>
+  <desc id="desc">A neon game boot screen with animated scanlines, loading bar, and glowing title.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#060817"/>
+      <stop offset="45%" stop-color="#10183a"/>
+      <stop offset="100%" stop-color="#03040a"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7df9ff"/>
+      <stop offset="50%" stop-color="#ff7ad9"/>
+      <stop offset="100%" stop-color="#8cff6a"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#42f5ff"/>
+      <stop offset="60%" stop-color="#ff6ac1"/>
+      <stop offset="100%" stop-color="#ffe66d"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="scanlines" width="100%" height="6" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="3" fill="rgba(255,255,255,0.05)"/>
+    </pattern>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="520" fill="url(#bg)"/>
+  <rect width="1600" height="520" fill="url(#grid)" opacity="0.35"/>
+  <rect width="1600" height="520" fill="url(#scanlines)" opacity="0.45"/>
+
+  <g opacity="0.75" filter="url(#blur)">
+    <path d="M-80 380C220 250 420 490 790 358C1080 257 1280 115 1720 258" fill="none" stroke="#7df9ff" stroke-width="24" opacity="0.10"/>
+    <path d="M-40 410C240 302 452 508 820 392C1090 306 1310 164 1660 300" fill="none" stroke="#ff7ad9" stroke-width="16" opacity="0.10"/>
+  </g>
+
+  <g filter="url(#blur)" opacity="0.95">
+    <circle cx="220" cy="120" r="130" fill="#34f5ff" opacity="0.12">
+      <animate attributeName="r" values="120;150;120" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1360" cy="120" r="170" fill="#ff6ac1" opacity="0.12">
+      <animate attributeName="r" values="160;190;160" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1240" cy="410" r="140" fill="#8cff6a" opacity="0.10">
+      <animate attributeName="cy" values="400;420;400" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g opacity="0.95">
+    <path d="M180 112H350L394 156V388H180Z" fill="rgba(125,249,255,0.05)" stroke="rgba(125,249,255,0.22)"/>
+    <path d="M1420 112H1250L1206 156V388H1420Z" fill="rgba(255,122,217,0.05)" stroke="rgba(255,122,217,0.22)"/>
+  </g>
+
+  <g opacity="0.9">
+    <rect x="170" y="92" width="1260" height="336" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.14)"/>
+    <rect x="190" y="112" width="1220" height="296" rx="20" fill="rgba(8,10,24,0.8)" stroke="rgba(124,249,255,0.16)"/>
+  </g>
+
+  <g opacity="0.9" stroke-linecap="round">
+    <path d="M228 148H364V184" stroke="url(#glow)" stroke-width="4" fill="none"/>
+    <path d="M1372 148H1236V184" stroke="url(#glow)" stroke-width="4" fill="none"/>
+    <path d="M228 372H364V336" stroke="url(#glow)" stroke-width="4" fill="none"/>
+    <path d="M1372 372H1236V336" stroke="url(#glow)" stroke-width="4" fill="none"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <text x="804" y="206" text-anchor="middle" font-family="monospace" font-size="88" font-weight="700" letter-spacing="10" fill="#05060c" opacity="0.95">GAME START</text>
+    <text x="800" y="202" text-anchor="middle" font-family="monospace" font-size="88" font-weight="700" letter-spacing="10" fill="url(#glow)">GAME START</text>
+    <text x="800" y="255" text-anchor="middle" font-family="monospace" font-size="24" letter-spacing="8" fill="#dbe1ff" opacity="0.9">GAME DEV  /  COMPUTER VISION  /  ANIME  /  GAMES</text>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="648" y="272" width="304" height="30" rx="15" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.13)"/>
+    <text x="800" y="293" text-anchor="middle" font-family="monospace" font-size="15" letter-spacing="6" fill="#ffe66d">BOOT SEQUENCE INITIATED</text>
+  </g>
+
+  <g transform="translate(390 292)">
+    <rect x="0" y="0" width="820" height="18" rx="9" fill="rgba(255,255,255,0.08)"/>
+    <rect x="0" y="0" width="150" height="18" rx="9" fill="url(#bar)">
+      <animate attributeName="width" values="120;650;220;800;150" dur="5.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="820" height="18" rx="9" fill="none" stroke="rgba(255,255,255,0.18)"/>
+  </g>
+
+  <g opacity="0.65">
+    <rect x="390" y="322" width="110" height="4" rx="2" fill="#7df9ff"/>
+    <rect x="520" y="322" width="70" height="4" rx="2" fill="#ff7ad9"/>
+    <rect x="610" y="322" width="145" height="4" rx="2" fill="#8cff6a"/>
+    <rect x="776" y="322" width="90" height="4" rx="2" fill="#ffe66d"/>
+    <rect x="888" y="322" width="124" height="4" rx="2" fill="#b3a1ff"/>
+  </g>
+
+  <g font-family="monospace" font-size="18" fill="#d9e1ff" opacity="0.92">
+    <text x="390" y="336">SYSTEM CHECK</text>
+    <text x="390" y="364" fill="#7df9ff">READY</text>
+    <text x="560" y="336">PIXEL SHADER</text>
+    <text x="560" y="364" fill="#ff7ad9">ACTIVE</text>
+    <text x="734" y="336">FRAME RATE</text>
+    <text x="734" y="364" fill="#8cff6a">60 FPS</text>
+    <text x="900" y="336">STATUS</text>
+    <text x="900" y="364" fill="#ffe66d">ONLINE</text>
+    <text x="1040" y="336">MODE</text>
+    <text x="1040" y="364" fill="#b3a1ff">ARCADE</text>
+  </g>
+
+  <g fill="#ffffff" opacity="0.7">
+    <circle cx="310" cy="158" r="2.5">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1290" cy="168" r="2.5">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1250" cy="340" r="2.5">
+      <animate attributeName="cy" values="340;320;340" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="360" cy="392" r="2.5">
+      <animate attributeName="cy" values="392;374;392" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g opacity="0.85" stroke-linecap="round">
+    <path d="M250 450H1350" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+    <path d="M250 450H560" stroke="url(#glow)" stroke-width="2.4">
+      <animate attributeName="stroke-dasharray" values="0 320;180 320;0 320" dur="3.6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M750 96l22-36h56l22 36-22 36h-56z" fill="rgba(255,122,217,0.12)" stroke="rgba(255,122,217,0.38)"/>
+    <path d="M800 82l10 14-10 14-10-14z" fill="#7df9ff">
+      <animateTransform attributeName="transform" type="rotate" from="0 800 96" to="360 800 96" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>
