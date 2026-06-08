@@ -20,7 +20,7 @@ jobs:
       - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
-          github_user_name: walnut
+          github_user_name: sugeladi777
           outputs: |
             dist/github-contribution-grid-snake.svg?palette=github-light&color_snake=#ff79c6
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#bd93f9
