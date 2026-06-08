@@ -1,78 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" role="img" aria-labelledby="title desc">
-  <title id="title">Contact card animation</title>
-  <desc id="desc">A glowing contact button with a floating envelope icon.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 180" role="img" aria-labelledby="title desc">
+  <title id="title">Contact card</title>
+  <desc id="desc">A clean anime-style contact banner with a neon mail accent.</desc>
   <defs>
-    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#11162c"/>
-      <stop offset="100%" stop-color="#05070f"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070816"/>
+      <stop offset="100%" stop-color="#03040a"/>
     </linearGradient>
-    <linearGradient id="button" x1="0" y1="0" x2="1" y2="0">
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%" stop-color="#7df9ff"/>
       <stop offset="50%" stop-color="#ff7ad9"/>
       <stop offset="100%" stop-color="#ffe66d"/>
     </linearGradient>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="b"/>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
       <feMerge>
-        <feMergeNode in="b"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      <animate attributeName="x1" values="-40%;0%;-40%" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="x2" values="20%;100%;20%" dur="4s" repeatCount="indefinite"/>
-    </linearGradient>
   </defs>
 
-  <rect width="520" height="180" rx="28" fill="url(#cardBg)"/>
-  <rect x="14" y="14" width="492" height="152" rx="22" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.12)"/>
+  <rect width="1600" height="180" rx="28" fill="url(#bg)"/>
+  <rect x="22" y="22" width="1556" height="136" rx="22" fill="rgb(255,255,255)" fill-opacity="0.03" stroke="rgb(255,255,255)" stroke-opacity="0.10"/>
 
-  <g opacity="0.55" filter="url(#glow)">
-    <circle cx="74" cy="142" r="46" fill="#7df9ff" opacity="0.12">
-      <animate attributeName="r" values="36;56;36" dur="4.2s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="462" cy="36" r="52" fill="#ff7ad9" opacity="0.09">
-      <animate attributeName="cy" values="36;44;36" dur="5s" repeatCount="indefinite"/>
-    </circle>
+  <circle cx="126" cy="90" r="48" fill="rgb(125,249,255)" fill-opacity="0.10" filter="url(#glow)">
+    <animate attributeName="r" values="42;54;42" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <path d="M106 77h40v26h-40z" fill="none" stroke="#7df9ff" stroke-width="3"/>
+  <path d="M106 77l20 16 20-16" fill="none" stroke="#7df9ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <g font-family="monospace" filter="url(#glow)">
+    <text x="240" y="82" font-size="26" letter-spacing="6" fill="#7df9ff">CONTACT</text>
+    <text x="240" y="118" font-size="18" fill="#d9e1ff">2188726251@qq.com</text>
   </g>
 
-  <g filter="url(#glow)">
-    <rect x="58" y="45" width="404" height="90" rx="45" fill="rgba(255,255,255,0.06)" stroke="url(#button)" stroke-width="2.2"/>
-    <rect x="76" y="61" width="368" height="58" rx="29" fill="url(#button)" opacity="0.15"/>
-    <path d="M74 58h372" stroke="url(#shine)" stroke-width="5" opacity="0.7"/>
-    <g transform="translate(97 52)">
-      <circle cx="38" cy="38" r="30" fill="rgba(255,255,255,0.08)" stroke="rgba(125,249,255,0.6)" stroke-width="2"/>
-      <circle cx="38" cy="38" r="16" fill="none" stroke="#7df9ff" stroke-width="2.4"/>
-      <path d="M22 30l16 12 16-12v18H22z" fill="#dffaff" opacity="0.95"/>
-      <path d="M22 30l16 12 16-12" fill="none" stroke="#7df9ff" stroke-width="2" stroke-linecap="round"/>
-      <circle cx="38" cy="38" r="24" fill="none" stroke="rgba(125,249,255,0.22)" stroke-width="1.5" stroke-dasharray="6 8">
-        <animateTransform attributeName="transform" type="rotate" from="0 38 38" to="360 38 38" dur="9s" repeatCount="indefinite"/>
-      </circle>
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="2.8s" repeatCount="indefinite"/>
-    </g>
+  <rect x="1100" y="62" width="390" height="56" rx="28" fill="rgb(255,255,255)" fill-opacity="0.05" stroke="url(#accent)" stroke-width="2"/>
+  <text x="1295" y="98" text-anchor="middle" font-family="monospace" font-size="18" fill="#fff1ab" letter-spacing="4">OPEN FOR CHAT</text>
 
-    <text x="210" y="82" font-family="monospace" font-size="25" fill="#f6f8ff" letter-spacing="4">CONTACT</text>
-    <text x="210" y="109" font-family="monospace" font-size="15" fill="#d9e1ff" opacity="0.9">MAIL ME FOR COLLAB / COMMISSION / CHAT</text>
-    <text x="386" y="82" text-anchor="middle" font-family="monospace" font-size="13" fill="#ffe66d" letter-spacing="3">NEW MESSAGE</text>
-
-    <g fill="#ffffff" opacity="0.55">
-      <circle cx="394" cy="60" r="3">
-        <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="424" cy="116" r="3">
-        <animate attributeName="opacity" values="1;0.2;1" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="446" cy="76" r="2.5">
-        <animate attributeName="cy" values="76;70;76" dur="3s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <g opacity="0.9">
-      <rect x="330" y="90" width="86" height="18" rx="9" fill="rgba(255,230,109,0.14)" stroke="rgba(255,230,109,0.28)"/>
-      <text x="373" y="103" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff1ab" letter-spacing="2">OPEN</text>
-    </g>
-  </g>
+  <path d="M240 132H1440" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
 </svg>
